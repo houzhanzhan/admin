@@ -8,6 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'defaultRoute' => 'index',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
@@ -37,14 +38,26 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
+
+       /* 'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+//                'catchAll' => 'index/add',
+                #-----------登录--------------#
+                'login'=>'login/login',
+                #-----------产品管理--------------#
+                'category_type'=>'category/category_type',                      //产品分类展示
+                'category_type_add'=>'category/category_type_add',              //产品分类添加
+                'category_type_del'=>'category/category_type_del',              //产品分类删除
+                'category_list'=>'category/category_list',                      //产品展示
+                'category_list_add'=>'category/category_list_add',              //产品添加
+                'category_list_del'=>'category/category_list_del',              //产品删除
+                #-----------订单管理--------------#
+
             ],
-        ],
-        */
+        ],*/
+
     ],
     'params' => $params,
 ];
